@@ -6,6 +6,7 @@ int main()
     string friend_name;
     char friend_sex = 0;
     string friend_obj;
+    int age = 0;
 
     // Initial variable settings by these prompts
     cout << "Enter the name of the person you want to write to: ";
@@ -15,9 +16,15 @@ int main()
     cout << "Enter the sex of the friend (m (male) or f (female)): ";
     cin >> friend_sex;
     friend_obj = (friend_sex == 'm') ? "him" : "her";
-    cout << endl;
-
+    cout << "Enter the age of the recipient: ";
+    cin >> age;
+    
+    // Validity check for the recipient's age
+    if (age <= 0 || age >= 110)
+        error("you're kidding!");
+    
     // Header
+    cout << endl;
     cout << "Dear, " << first_name << endl;
     cout << endl;
     
@@ -30,4 +37,6 @@ int main()
     cout << "Have you seen " << friend_name << " lately?" << endl;
     cout << "If you see " << friend_name << " please ask " << friend_obj;
     cout << " to call me." << endl;
+    cout << "I hear you just had a birthday and you are "; 
+    cout << age << " years old." << endl;
 }
