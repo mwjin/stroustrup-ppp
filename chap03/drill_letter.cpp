@@ -32,11 +32,20 @@ int main()
     cout << "  How have you been? " << "Hope you are doing well." << endl;
     cout << endl;
 
-    // Main purpose
+    // Main text
     cout << "I would like to ask a question. ";
-    cout << "Have you seen " << friend_name << " lately?" << endl;
+    cout << "Have you seen " << friend_name << " lately? ";
     cout << "If you see " << friend_name << " please ask " << friend_obj;
     cout << " to call me." << endl;
     cout << "I hear you just had a birthday and you are "; 
-    cout << age << " years old." << endl;
+    cout << age << " years old.";
+
+    if (age < 12)
+        cout << " Next year you will be " << age + 1 << ".";
+    else if (age == 17)
+        cout << " Next year you will be able to vote.";
+    else if (age > 70)
+        cout << " I hope you are enjoying retirement.";
+
+    cout << endl;
 }
