@@ -48,4 +48,14 @@ int main()
         cout << " I hope you are enjoying retirement.";
 
     cout << endl;
+
+    cout << "I'm really sorry not to come over your birthday party. ";
+    cout << "Next time I will be right with you. ";
+    cout << "Hope to see you soon!" << endl;
+
+    // Wrap up
+    cout << endl;
+    cout << "Yours sincerely," << endl;
+    cout << endl << endl;  // Blank lines for a signature
+    cout << first_name << endl;
 }
