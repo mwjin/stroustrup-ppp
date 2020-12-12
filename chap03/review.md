@@ -40,12 +40,13 @@
 
 18. 
 
+    - Definition of a legal name: a variable name that is allowed by a compiler.
     - Legal names: This_little_pig, MiniMineMine, number
     - Illegal names with the reason
       - This_1_is fine, latest thing: *Whitespaces* are not allowed as a character of a variable name.
-      - 2_For_1_special: A number cannot be the first character of a variable name.
-      - the_$12_method: *$* is not allowed as a character of a variable name.
+      - 2_For_1_special: A numeric character cannot be the first character of a variable name.
+      - the_$12_method: *$* is not allowed as a character of a variable name. (This is controversial because *$* is allowed in some machines.)
       - correct?:  *?* is not allowed as a character of a variable name.
-      - _this_is_ok: The underbar cannot be the first character of a variable name.
+      - _this_is_ok: This variable name may be allowed by a compiler. However, you should not use such names because these are reserved for implementation and system entities.
 
-19. `
+19. 
