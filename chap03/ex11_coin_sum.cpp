@@ -8,6 +8,7 @@ int main() {
     int half_dollar_cnt;
     int one_dollar_cnt;
     int total_cent = 0;
+    double total_dollar = 0.0;
 
     // Inputs
     cout << "How many pennies do you have? ";
@@ -63,6 +64,7 @@ int main() {
         return 0;
     }
     total_cent += one_dollar_cnt * 100;
+    total_dollar = total_cent / 100.0;
     cout << endl;
 
     // Outputs
@@ -114,6 +116,11 @@ int main() {
             cout << " one dollars.";
         cout << endl;
     }
+
     cout << "The value of all of your coins is " << total_cent;
-    cout << " cents" << endl;
+    if (total_cent > 1) 
+        cout << " cents";
+    else
+        cout << " cent";
+    cout << " ($" << total_dollar << ")." << endl;
 }
