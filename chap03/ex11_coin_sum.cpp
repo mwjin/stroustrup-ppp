@@ -12,26 +12,56 @@ int main() {
     // Inputs
     cout << "How many pennies do you have? ";
     cin >> penny_cnt;
+    if (penny_cnt < 0) {
+        cout << "The number of the coins is negative. Are you serious?" 
+        << endl;
+        return 0;
+    }
     total_cent += penny_cnt;
     
     cout << "How many nickels do you have? ";
     cin >> nickel_cnt;
+    if (nickel_cnt < 0) {
+        cout << "The number of the coins is negative. Are you serious?" 
+        << endl;
+        return 0;
+    }
     total_cent += nickel_cnt * 5;
     
     cout << "How many dimes do you have? ";
     cin >> dime_cnt;
+    if (dime_cnt < 0) {
+        cout << "The number of the coins is negative. Are you serious?" 
+        << endl;
+        return 0;
+    }
     total_cent += dime_cnt * 10;
 
     cout << "How many quarters do you have? ";
     cin >> quarter_cnt;
+    if (quarter_cnt < 0) {
+        cout << "The number of the coins is negative. Are you serious?" 
+        << endl;
+        return 0;
+    }
     total_cent += quarter_cnt * 25;
 
     cout << "How many half dollars do you have? ";
     cin >> half_dollar_cnt;
+    if (half_dollar_cnt < 0) {
+        cout << "The number of the coins is negative. Are you serious?" 
+        << endl;
+        return 0;
+    }
     total_cent += half_dollar_cnt * 50;
 
     cout << "How many one-dollars do you have? ";
     cin >> one_dollar_cnt;
+    if (one_dollar_cnt < 0) {
+        cout << "The number of the coins is negative. Are you serious?" 
+        << endl;
+        return 0;
+    }
     total_cent += one_dollar_cnt * 100;
     cout << endl;
 
