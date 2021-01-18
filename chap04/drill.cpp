@@ -2,11 +2,17 @@
 
 
 int main() {
-    int num1 = 0;
-    int num2 = 0;
+    int s = 0;
+    int l = 0;
+    int tmp = 0;
 
-    while (cin >> num1 >> num2) {
-        cout << "First integer: " << num1 << endl;
-        cout << "Second integer: " << num2 << endl;
+    while (cin >> s >> l) {
+        if (s > l) {  // Swap
+            tmp = s;
+            s = l;
+            l = tmp;
+        }
+        cout << "The smaller value is: " << s << endl;
+        cout << "The larger value is: " << l << endl;
     }
 }
