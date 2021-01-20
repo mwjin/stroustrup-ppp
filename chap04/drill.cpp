@@ -2,9 +2,9 @@
 
 
 int main() {
-    int s = 0;
-    int l = 0;
-    int tmp = 0;
+    double s = 0;
+    double l = 0;
+    double tmp = 0;
 
     while (cin >> s >> l) {
         if (s == l)
