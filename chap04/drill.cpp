@@ -17,6 +17,9 @@ int main() {
             }
             cout << "The smaller value is: " << s << endl;
             cout << "The larger value is: " << l << endl;
+
+            if ((l - s) < (1.0 / 100))
+                cout << "The numbers are almost equal" << endl;
         }
     }
 }
