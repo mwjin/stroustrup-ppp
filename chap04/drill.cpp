@@ -2,24 +2,24 @@
 
 
 int main() {
-    double s = 0;
-    double l = 0;
-    double tmp = 0;
+    double s = 0.0;
+    double l = 0.0;
+    double num = 0.0;
+    bool first_read = true;
 
-    while (cin >> s >> l) {
-        if (s == l)
-            cout << "The numbers are equal." << endl;
-        else {
-            if (s > l) {  // Swap
-                tmp = s;
-                s = l;
-                l = tmp;
-            }
-            cout << "The smaller value is: " << s << endl;
-            cout << "The larger value is: " << l << endl;
-
-            if ((l - s) < (1.0 / 100))
-                cout << "The numbers are almost equal" << endl;
+    while (cin >> num) {
+        if (first_read) {  // Initialize the smallest and the largert numbers
+            s = num;
+            l = num;
+            first_read = false;
+        }
+        if (s >= num) {
+            s = num;
+            cout << "The smallest so far" << endl;
+        }
+        if (l <= num) {
+            l = num;
+            cout << "The largest so far" << endl;
         }
     }
 }
