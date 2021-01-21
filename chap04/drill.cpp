@@ -1,5 +1,9 @@
 #include "../std_lib_facilities.h"
 
+bool is_legal_unit(string unit) {
+    return (unit == "cm" || unit == "m" || unit == "in" || unit == "ft");
+}
+
 int main() {
     double s = 0.0;
     double l = 0.0;
@@ -11,6 +15,9 @@ int main() {
     // so you can put the number and the unit into these variables 
     // appropriately.
     while (cin >> num >> unit) {
+        if (!is_legal_unit(unit))
+            break;
+
         if (first_read) {  // Initialize the smallest and the largert numbers
             s = num;
             l = num;
