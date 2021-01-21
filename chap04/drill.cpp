@@ -4,11 +4,41 @@ bool is_legal_unit(string unit) {
     return (unit == "cm" || unit == "m" || unit == "in" || unit == "ft");
 }
 
+double convert_to_meter(double num, string unit) {
+    constexpr double m_per_cm = 0.01;
+    constexpr double cm_per_inch = 2.54;
+    constexpr double inch_per_fit = 12.0;
+    double result = 0.0;
+
+    // only four units (cm, in, ft, and m) are accepted for this function.
+    if (unit == "cm")
+        result = num * m_per_cm;
+    else if (unit == "in")
+        result = num * m_per_cm * cm_per_inch;
+    else if (unit == "ft")
+        result = num * m_per_cm * cm_per_inch * inch_per_fit;
+    else  // "m"
+        result = num;
+
+    return result;
+}
+
 int main() {
-    double s = 0.0;
-    double l = 0.0;
     double num = 0.0;
     string unit = "";
+    double num_meter = 0.0;
+    
+    double s = 0.0;
+    string s_unit = "";
+    double s_meter = 0.0;
+
+    double l = 0.0;
+    string l_unit = "";
+    double l_meter = 0.0;
+    
+    int cnt = 0;
+    double sum = 0.0;
+    
     bool first_read = true;
 
     // You should put a whitespace between the number and the unit 
@@ -21,20 +51,37 @@ int main() {
             cout << "The unit '" << unit << "' is illegal." << endl;
             break;
         }
+        num_meter = convert_to_meter(num, unit);
 
         if (first_read) {  // Initialize the smallest and the largert numbers
             s = num;
+            s_unit = unit;
+            s_meter = num_meter;
+
             l = num;
+            l_unit = unit;
+            l_meter = num_meter;
+
             first_read = false;
         }
-        if (s >= num) {
+
+        if (s_meter >= num_meter) {
             s = num;
-            cout << "The smallest so far" << endl;
+            s_unit = unit;
+            s_meter = num_meter;
         }
-        if (l <= num) {
+        if (l_meter <= num_meter) {
             l = num;
-            cout << "The largest so far" << endl;
+            l_unit = unit;
+            l_meter = num_meter;
         }
+        cnt += 1;
+        sum += num_meter;
+
+        cout << "The smallest value: " << s << " " << s_unit << endl;
+        cout << "The largest value: " << l << " " << l_unit << endl;
+        cout << "The number of values: " << cnt << endl;
+        cout << "The sum of values: " << sum << " m" << endl;
         cout << endl;
     }
 }
