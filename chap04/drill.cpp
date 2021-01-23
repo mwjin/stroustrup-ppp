@@ -65,6 +65,7 @@ int main() {
         }
         num_meter = convert_to_meter(num, unit);
         meters.push_back(num_meter);
+        sort(meters);
 
         if (first_read) {  // Initialize the smallest and the largert numbers
             s = num;
@@ -95,7 +96,7 @@ int main() {
         cout << "The largest value: " << l << " " << l_unit << endl;
         cout << "The number of values: " << cnt << endl;
         cout << "The sum of values: " << sum << " m" << endl;
-        cout << "The list of all values (Unit: meters)" << endl;
+        cout << "The list of all sorted values (Unit: meters)" << endl;
         print_vector(meters);
         cout << endl;
     }
