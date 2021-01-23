@@ -23,6 +23,17 @@ double convert_to_meter(double num, string unit) {
     return result;
 }
 
+void print_vector(vector<double> v) {
+    size_t v_size = v.size();
+
+    for (size_t i = 0; i < v_size; i++) {
+        if (i == v_size - 1) 
+            cout << v[i] << endl;
+        else
+            cout << v[i] << ' ';
+    }
+}
+
 int main() {
     double num = 0.0;
     string unit = "";
@@ -38,6 +49,7 @@ int main() {
     
     int cnt = 0;
     double sum = 0.0;
+    vector<double> meters;
     
     bool first_read = true;
 
@@ -52,6 +64,7 @@ int main() {
             break;
         }
         num_meter = convert_to_meter(num, unit);
+        meters.push_back(num_meter);
 
         if (first_read) {  // Initialize the smallest and the largert numbers
             s = num;
@@ -82,6 +95,8 @@ int main() {
         cout << "The largest value: " << l << " " << l_unit << endl;
         cout << "The number of values: " << cnt << endl;
         cout << "The sum of values: " << sum << " m" << endl;
+        cout << "The list of all values (Unit: meters)" << endl;
+        print_vector(meters);
         cout << endl;
     }
 }
